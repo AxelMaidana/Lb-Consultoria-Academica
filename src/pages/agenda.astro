@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BookingCalendar from '../components/react/BookingCalendar';
+---
+
+<Layout title="Consultoría Académica | Agendar Cita">
+  <Header />
+  <main class="bg-slate-50 min-h-screen py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Reservá tu turno</h1>
+        <p class="mt-4 text-xl text-slate-500">
+          Elegí el día y horario que mejor te convenga para comenzar a trabajar juntos.
+        </p>
+      </div>
+
+      <BookingCalendar client:load />
+      
+      <div class="mt-12 text-center text-sm text-slate-400">
+        <p>Los horarios se muestran en tu zona horaria local.</p>
+        <p>Para cancelaciones, por favor avisar con 24hs de anticipación.</p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

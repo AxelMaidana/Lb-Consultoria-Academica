@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Consultoría Académica | Sobre Mí">
+  <Header />
+  <main class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+        <div class="relative mb-12 lg:mb-0">
+          <div
+            class="aspect-w-3 aspect-h-4 rounded-2xl overflow-hidden shadow-xl bg-slate-200"
+          >
+            <!-- Placeholder for profile image -->
+            <img
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=688&q=80"
+              alt="Retrato profesional"
+              class="object-cover w-full h-full"
+            />
+          </div>
+        </div>
+        <div>
+          <h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl mb-6">
+            Hola, soy Laura Barrios
+          </h1>
+          <div class="prose prose-lg prose-slate text-slate-500">
+            <p>
+              Soy <strong>Licenciada en Gestión Social</strong> y <strong
+                >Auxiliar Docente</strong
+              > con más de 10 años de experiencia en el ámbito educativo universitario.
+            </p>
+            <p>
+              Mi pasión es acompañar a estudiantes en sus trayectorias
+              académicas, brindando herramientas concretas para superar
+              obstáculos y potenciar sus capacidades. Entiendo que el
+              rendimiento académico no depende solo de estudiar más, sino de
+              estudiar mejor y gestionar las emociones y el contexto social que
+              nos rodea.
+            </p>
+            <h3 class="text-slate-900 font-bold mt-8 mb-4">Mi enfoque</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>
+                <strong>Integral:</strong> Considero al estudiante como un todo, no
+                solo como un número de legajo.
+              </li>
+              <li>
+                <strong>Práctico:</strong> Buscamos soluciones concretas y aplicables
+                desde el primer día.
+              </li>
+              <li>
+                <strong>Humano:</strong> Priorizo la escucha activa y la empatía en
+                cada encuentro.
+              </li>
+            </ul>
+            <p class="mt-8">
+              Además de mi trabajo en consultoría, participo activamente en
+              proyectos de investigación sobre deserción estudiantil y políticas
+              de inclusión educativa.
+            </p>
+          </div>
+          <div class="mt-10">
+            <a
+              href="/agenda"
+              class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-teal-700 hover:bg-teal-800 transition-colors"
+            >
+              Trabajemos juntos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

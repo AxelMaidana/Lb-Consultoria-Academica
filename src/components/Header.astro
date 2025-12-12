@@ -1,0 +1,109 @@
+---
+const navItems = [
+  { name: "Inicio", href: "/" },
+  { name: "Servicios", href: "/servicios" },
+  { name: "Sobre mí", href: "/sobre-mi" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contacto", href: "/contacto" },
+];
+---
+
+<header
+  class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0 flex items-center">
+        <a href="/" class="flex items-center gap-2">
+          <div
+            class="w-8 h-8 bg-teal-700 rounded-tr-xl rounded-bl-xl flex items-center justify-center text-white font-serif font-bold text-lg"
+          >
+            Lb
+          </div>
+          <span
+            class="font-serif font-bold text-xl text-slate-800 tracking-tight"
+            >Consultoría Académica</span
+          >
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex space-x-8">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="text-slate-600 hover:text-teal-700 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+            >
+              {item.name}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="hidden md:flex items-center">
+        <a
+          href="/agenda"
+          class="bg-teal-700 hover:bg-teal-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm hover:shadow-md"
+        >
+          Agendar Cita
+        </a>
+      </div>
+
+      <!-- Mobile menu button (simple implementation) -->
+      <div class="md:hidden flex items-center">
+        <button
+          id="mobile-menu-btn"
+          class="text-slate-600 hover:text-slate-900 focus:outline-none p-2"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Panel -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full"
+  >
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-slate-600 hover:text-teal-700 block px-3 py-2 rounded-md text-base font-medium"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+      <a
+        href="/agenda"
+        class="block w-full text-center bg-teal-700 text-white px-4 py-2 rounded-lg text-base font-medium mt-4"
+      >
+        Agendar Cita
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+</script>

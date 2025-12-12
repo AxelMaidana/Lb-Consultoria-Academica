@@ -1,0 +1,44 @@
+---
+import { pwaInfo } from 'virtual:pwa-info';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+  description?: string;
+}
+
+const { title, description = "Servicios de consultoría y acompañamiento académico profesional." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icons/pwa-192x192.png">
+    <link rel="mask-icon" href="/favicon.svg" color="#FFFFFF">
+    <meta name="theme-color" content="#ffffff">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
+    <script src="/src/pwa.ts"></script>
+	</head>
+	<body class="font-sans text-gray-800 bg-slate-50 antialiased flex flex-col min-h-screen">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+  }
+</style>
