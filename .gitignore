@@ -4,6 +4,9 @@ dist/
 # generated types
 .astro/
 README.md
+PWA_CHECKLIST.md
+dev-list/
+.vscode/
 
 # dependencies
 node_modules/

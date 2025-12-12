@@ -233,7 +233,7 @@ export default function BookingCalendar() {
                                         checked={formData.modality === 'Presencial'}
                                         onChange={e => setFormData({ ...formData, modality: e.target.value })}
                                     />
-                                    <span className="ml-2">Presencial (Palermo)</span>
+                                    <span className="ml-2">Presencial (Resistencia, Chaco)</span>
                                 </label>
                             </div>
                         </div>
